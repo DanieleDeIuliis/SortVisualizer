@@ -19,8 +19,8 @@ public class SortController {
 
 
     @PostMapping("/{sortAlgorithm}")
-    ResponseEntity<List<Integer>> sortArray(@PathVariable String sortAlgorithm,
-                                            @RequestBody List<Integer> numbersToSort) {
+    ResponseEntity<List<Integer>> sort(@PathVariable String sortAlgorithm,
+                                       @RequestBody List<Integer> numbersToSort) {
         sortService.sort(numbersToSort, sortAlgorithm);
         return ResponseEntity.ok().body(numbersToSort);
     }
