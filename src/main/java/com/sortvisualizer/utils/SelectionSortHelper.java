@@ -11,32 +11,32 @@ import java.util.List;
 public class SelectionSortHelper implements SortHelper{
 
     @Override
-    public List<Animation> sort(List<Integer> arrayToSort) {
+    public List<Animation> sort(List<Integer> numbersToSort) {
         List<Animation> animations = new ArrayList<>();
         int nextIndexToSort = 0;
-        while(nextIndexToSort < arrayToSort.size()) {
-            swapElements(arrayToSort, nextIndexToSort, animations);
+        while(nextIndexToSort < numbersToSort.size()) {
+            swapElements(numbersToSort, nextIndexToSort, animations);
             nextIndexToSort++;
         }
         return animations;
     }
 
-    private void swapElements(List<Integer> arrayToSort, int nextIndexToSort,
+    private void swapElements(List<Integer> numbersToSort, int nextIndexToSort,
                               List<Animation> animations) {
-        int minIndex = findMinIndex(arrayToSort, nextIndexToSort);
-        int currentMinValue = arrayToSort.get(minIndex);
+        int minIndex = findMinIndex(numbersToSort, nextIndexToSort);
+        int currentMinValue = numbersToSort.get(minIndex);
         animations.add(new SelectionSortAnimation(nextIndexToSort, minIndex,
-                arrayToSort.get(nextIndexToSort), currentMinValue));
-        arrayToSort.set(minIndex, arrayToSort.get(nextIndexToSort));
-        arrayToSort.set(nextIndexToSort, currentMinValue);
+                numbersToSort.get(nextIndexToSort), currentMinValue));
+        numbersToSort.set(minIndex, numbersToSort.get(nextIndexToSort));
+        numbersToSort.set(nextIndexToSort, currentMinValue);
     }
 
-    private int findMinIndex(List<Integer> arrayToSort, int nextIndexToSort) {
+    private int findMinIndex(List<Integer> numbersToSort, int nextIndexToSort) {
         int min = Integer.MAX_VALUE;
         int minIndex = nextIndexToSort;
-        for(int i = nextIndexToSort; i < arrayToSort.size(); i++) {
-            if(arrayToSort.get(i) <= min) {
-                min = arrayToSort.get(i);
+        for(int i = nextIndexToSort; i < numbersToSort.size(); i++) {
+            if(numbersToSort.get(i) <= min) {
+                min = numbersToSort.get(i);
                 minIndex = i;
             }
         }

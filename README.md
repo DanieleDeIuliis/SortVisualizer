@@ -22,7 +22,7 @@ The general url **http://localhost:3000**
 
 The web server has two end-points:
 
-* **/{sortAlgorithm}:** HTTP POST: It sorts the list of numbers passed.
+* **/sort/{sortAlgorithm}:** HTTP POST: It sorts the list of numbers passed.
     * Input: An array of numbers in JSON passed as the body of the request
     * Output: The corresponding sorted array in JSON
 Example input body:
@@ -33,7 +33,7 @@ Example output body:
 ```bash
 [1,3,4,5,6,7]
 ```
-* **/{sortAlgorithm}/animations:** HTTP POST: It computes the corresponding animations that an
+* **/sort/{sortAlgorithm}/animations:** HTTP POST: It computes the corresponding animations that an
 array of rectangles has to do to visualize each step of the selected algorithm
     * Input: An array of numbers in JSON passed as the body of the request
     * Output: A list JSON objects animations 
